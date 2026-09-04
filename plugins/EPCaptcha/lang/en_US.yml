@@ -1,0 +1,47 @@
+# EPCaptcha English language file
+# Copy this file, rename it (for example de_DE.yml), translate the values,
+# and set language.default in config.yml. Missing keys fall back to en_US.
+
+prefix: '<dark_gray>[</dark_gray><gradient:#8B5CF6:#22D3EE><bold>EPCaptcha</bold></gradient><dark_gray>]</dark_gray> '
+
+captcha:
+  title: '<red>Verification required'
+  filler-name: ' '
+  target-name: '<green><bold>CLICK HERE</bold></green>'
+  target-lore:
+    - '<aqua>Click to prove that you are not a bot.'
+
+messages:
+  captcha-opened: '<yellow>Suspicious AFK farming detected. Click the green pane to verify.'
+  captcha-solved: '<green><bold>Verification successful!</bold></green>'
+  captcha-timeout: '<red>The verification time expired.'
+  relocated-afk: '<red>AFK farming was detected; you were moved to spawn.'
+  no-permission: '<red>You do not have permission to do that.'
+  player-only: '<red>This command can only be used by a player.'
+  reload-success: '<green>Configuration and language files reloaded.'
+  spawn-set: '<green>The spawn point was set to your current location.'
+  usage: '<aqua>Usage: /epcaptcha <reload|setspawn|test|info>'
+  player-not-found: '<red>Player not found: <white>{player}</white>'
+  no-player-data: '<yellow>No detection data exists for {player} yet.'
+  info: '<aqua>{player}</aqua> <dark_gray>→</dark_gray> <yellow>break ratio:</yellow> <green>{ratio}</green> <yellow>camera still:</yellow> <green>{still}s</green> <yellow>captcha:</yellow> <green>{captcha}</green> <yellow>client:</yellow> <green>{client}</green>'
+
+values:
+  'true': 'yes'
+  'false': 'no'
+  java-client: 'Java'
+  bedrock-client: 'Bedrock'
+
+logs:
+  enabled: 'Enabled on {platform} ({minecraft}); Folia mode: {folia}.'
+  disabled: 'Disabled.'
+  missing-command: "Command 'epcaptcha' is missing from plugin.yml."
+  unknown-material: "Unknown generator material: {material}"
+  invalid-material: "Invalid item material '{material}'; using {fallback}."
+  invalid-timeout-action: "Invalid captcha.on-timeout value '{value}'; using TELEPORT_SPAWN."
+  spawn-world-missing: "Spawn world '{world}' is not loaded; the player's world spawn will be used."
+  spawn-unavailable: 'No spawn location is available for {player}.'
+  language-loaded: 'Loaded {count} language file(s); default language: {language}.'
+  language-load-failed: "Could not load language file '{file}': {error}"
+  floodgate-detected: 'Floodgate detected; Bedrock client identification is enabled.'
+  floodgate-unavailable: 'Floodgate was not detected; all players will be treated as Java clients.'
+  scheduler-failed: 'Could not invoke the Folia scheduler; disabling EPCaptcha to prevent unsafe execution: {error}'

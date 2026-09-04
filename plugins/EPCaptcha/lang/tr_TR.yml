@@ -1,0 +1,47 @@
+# EPCaptcha Türkçe dil dosyası
+# Yeni bir dil eklemek için bu dosyayı kopyalayıp çevirin ve config.yml
+# içindeki language.default değerini yeni dosya adına ayarlayın.
+
+prefix: '<dark_gray>[</dark_gray><gradient:#8B5CF6:#22D3EE><bold>EPCaptcha</bold></gradient><dark_gray>]</dark_gray> '
+
+captcha:
+  title: '<red>Doğrulama gerekli'
+  filler-name: ' '
+  target-name: '<green><bold>BURAYA TIKLA</bold></green>'
+  target-lore:
+    - '<aqua>Bot olmadığını doğrulamak için tıkla.'
+
+messages:
+  captcha-opened: '<yellow>Şüpheli AFK farming tespit edildi. Doğrulamak için yeşil cama tıkla.'
+  captcha-solved: '<green><bold>Doğrulama başarılı!</bold></green>'
+  captcha-timeout: '<red>Doğrulama süresi doldu.'
+  relocated-afk: '<red>AFK farming tespit edildi; spawn noktasına ışınlandın.'
+  no-permission: '<red>Bunu yapmak için yetkin yok.'
+  player-only: '<red>Bu komut yalnızca oyuncular tarafından kullanılabilir.'
+  reload-success: '<green>Yapılandırma ve dil dosyaları yeniden yüklendi.'
+  spawn-set: '<green>Spawn noktası mevcut konumuna ayarlandı.'
+  usage: '<aqua>Kullanım: /epcaptcha <reload|setspawn|test|info>'
+  player-not-found: '<red>Oyuncu bulunamadı: <white>{player}</white>'
+  no-player-data: '<yellow>{player} için henüz tespit verisi yok.'
+  info: '<aqua>{player}</aqua> <dark_gray>→</dark_gray> <yellow>kırım oranı:</yellow> <green>{ratio}</green> <yellow>kamera hareketsiz:</yellow> <green>{still} sn</green> <yellow>captcha:</yellow> <green>{captcha}</green> <yellow>istemci:</yellow> <green>{client}</green>'
+
+values:
+  'true': 'evet'
+  'false': 'hayır'
+  java-client: 'Java'
+  bedrock-client: 'Bedrock'
+
+logs:
+  enabled: '{platform} ({minecraft}) üzerinde etkinleştirildi; Folia modu: {folia}.'
+  disabled: 'Devre dışı bırakıldı.'
+  missing-command: "plugin.yml içinde 'epcaptcha' komutu bulunamadı."
+  unknown-material: 'Bilinmeyen jeneratör materyali: {material}'
+  invalid-material: "Geçersiz eşya materyali '{material}'; {fallback} kullanılıyor."
+  invalid-timeout-action: "Geçersiz captcha.on-timeout değeri '{value}'; TELEPORT_SPAWN kullanılıyor."
+  spawn-world-missing: "Spawn dünyası '{world}' yüklü değil; oyuncunun dünya spawn noktası kullanılacak."
+  spawn-unavailable: '{player} için kullanılabilir spawn noktası yok.'
+  language-loaded: '{count} dil dosyası yüklendi; varsayılan dil: {language}.'
+  language-load-failed: "'{file}' dil dosyası yüklenemedi: {error}"
+  floodgate-detected: 'Floodgate algılandı; Bedrock istemci tanıma etkin.'
+  floodgate-unavailable: 'Floodgate algılanmadı; tüm oyuncular Java istemcisi kabul edilecek.'
+  scheduler-failed: 'Folia zamanlayıcısı çalıştırılamadı; güvenli olmayan çalışmayı önlemek için EPCaptcha kapatılıyor: {error}'

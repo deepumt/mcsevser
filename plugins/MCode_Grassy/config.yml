@@ -1,0 +1,8 @@
+# 备用存储（1.20+优先世界PDC，仅异常兜底）
+world-data:
+# 对应js initRefreshTime = 230 秒
+refresh-seconds: 230
+# 对应js progressLength = 20
+progress-bar-length: 20
+# 岛屿清空半径
+island-clear-range: 10

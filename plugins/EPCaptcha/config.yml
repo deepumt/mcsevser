@@ -1,0 +1,63 @@
+# EPCaptcha configuration
+# Runtime text is intentionally kept in plugins/EPCaptcha/lang/*.yml.
+# MiniMessage and legacy & color codes are accepted in language files.
+
+language:
+  # Any file name in the lang directory, without ".yml".
+  default: en_US
+  # Keep this false to show English to everyone by default.
+  # Set it to true to use a matching language file for each client's locale.
+  use-client-locale: false
+
+detection:
+  session-seconds: 900
+  break-ratio-threshold: 0.80
+  only-generator-blocks: true
+  generator-blocks:
+    - COBBLESTONE
+    - STONE
+    - BASALT
+    - NETHERRACK
+    - COBBLED_DEEPSLATE
+  camera:
+    enabled: true
+    still-seconds: 120
+    yaw-epsilon: 5.0
+    pitch-epsilon: 5.0
+  rhythm:
+    enabled: true
+    min-samples: 30
+    max-stddev-ms: 60
+  score:
+    break-weight: 2
+    camera-weight: 3
+    rhythm-weight: 2
+    threshold: 4
+
+afk-relocation:
+  enabled: true
+  check-seconds: 300
+  require-camera-still: true
+  position:
+    history-seconds: 60
+    confine-radius: 4.0
+    require-confined: false
+
+captcha:
+  size: 27
+  timeout-seconds: 60
+  reopen-on-close: true
+  freeze-commands: true
+  on-timeout: TELEPORT_SPAWN # TELEPORT_SPAWN | KICK | BOTH | NONE
+  filler:
+    material: BLACK_STAINED_GLASS_PANE
+  target:
+    material: LIME_STAINED_GLASS_PANE
+
+spawn:
+  world: ''
+  x: 0.5
+  y: 100.0
+  z: 0.5
+  yaw: 0.0
+  pitch: 0.0

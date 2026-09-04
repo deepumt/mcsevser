@@ -1,0 +1,9 @@
+死亡不掉落
+execute in minecraft:skyblock run gamerule keepInventory true
+execute in minecraft:skyblock run gamerule mobGriefing false
+execute in minecraft:skyblock run gamerule doFireTick false
+网页管理器密码设置
+创建账户:bwc adduser <用户> <密码>
+删除账号:bwc deluser <用户>
+
+启动:java -Xms2G -Xmx4G -jar paper.jar --nogui

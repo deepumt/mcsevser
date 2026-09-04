@@ -1,0 +1,96 @@
+# Better-WebConsole configuration
+# Restart the Minecraft server after changing web.port or web.bind-address.
+
+web:
+  # Web panel port. Must be different from the Minecraft server port.
+  port: 14444
+  
+  # Production recommendation: use "127.0.0.1" behind Nginx/Caddy/Cloudflare Tunnel.
+  # Use "0.0.0.0" only when the panel must listen on every network interface.
+  bind-address: 0.0.0.0
+  
+  # Number of recent console lines kept in memory for newly connected browsers.
+  log-buffer-size: 1000
+
+security:
+  # Web session lifetime after the last request/activity.
+  session-timeout-minutes: 60
+  
+  # Maximum lifetime for a web session even if it remains active.
+  session-max-lifetime-minutes: 720
+  
+  # Login brute-force protection per IP address.
+  max-login-attempts: 5
+  lockout-duration-minutes: 15
+  
+  # Maximum commands per logged-in browser session per minute.
+  command-rate-limit-per-minute: 30
+  
+  # Empty list means any IP can reach the login page.
+  # Examples:
+  # ip-whitelist:
+  #   - "127.0.0.1"
+  #   - "192.168.1.0/24"
+  ip-whitelist: []
+  
+  # Set true only when the panel is opened through HTTPS.
+  # Keep false for direct http://server:4242 access.
+  secure-cookies: false
+  csrf-secret: K4rb91T1ZPI4Co5zRZvt0tqYpC5Sao6Dm9SKCDA1CwM
+
+logging:
+  log-commands: true
+  log-auth: true
+  audit-log: true
+
+system-stats:
+  # Adds host CPU, machine RAM, disk, OS and JVM details to the dashboard.
+  enabled: true
+  
+  # OS-level polling interval for dashboard machine details.
+  # CPU chart samples still update every second.
+  update-interval-seconds: 1
+  
+  # Reports disk usage for the Minecraft server folder.
+  show-disk: true
+  
+  history:
+    # Maximum stored stat points. At the default 1 second write interval this is 24 hours.
+    retention-points: 86400
+    
+    # Maximum points returned by /api/stats/history after server-side downsampling.
+    api-max-points: 720
+    
+    # How often TPS/RAM/CPU/player stats are appended to disk.
+    write-interval-seconds: 1
+    
+    # Flushes stat history after this many appended points.
+    flush-batch-size: 30
+
+player-activity:
+  # Flushes player activity history after this many join/leave/command events.
+  flush-batch-size: 30
+  
+  # Rebuilds grouped activity and known-player summaries for the dashboard.
+  cache-seconds: 5
+  
+  # Rebuilds offline player search data less often because it can be large.
+  offline-cache-seconds: 60
+  
+  # Maximum offline players returned by /api/players/offline in one page.
+  offline-max-api-limit: 120
+
+commands:
+  # Exact command labels blocked from the web console and aliases.
+  # Leave empty for full console access. Examples: ["stop", "restart", "op", "deop"]
+  blocked: []
+  
+  # Web shortcuts. Type !name in the web console to run an alias.
+  # Use && to run several commands in order. Keep aliases short and auditable.
+  aliases:
+    tps: tps
+    list: list
+    save: save-all
+    day: time set day
+    night: time set night
+    clear-weather: weather clear
