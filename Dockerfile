@@ -1,4 +1,4 @@
-FROM swr.cn-north-4.myhuaweicloud.com/ddn-k8s/docker.io/eclipse-temurin:21-jre
+FROM eclipse-temurin:21-jre
 LABEL author="神人"
 LABEL email="zxcvbnm1916716@qq.com"
 # 复制全部项目文件到容器 /mc
