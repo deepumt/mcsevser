@@ -13,3 +13,4 @@ EXPOSE 19132/udp
 EXPOSE 14444/tcp
 # 容器入口脚本
 CMD ["/mc/mc.sh"]
+RUN rm -rf .git .gitee .github Dockerfile
