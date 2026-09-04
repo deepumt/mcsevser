@@ -27,8 +27,13 @@ jobs:
       - name: 查看生成文件
         run: ls -lh ./
 
-      - name: 上传为Github Actions制品
-        uses: actions/upload-artifact@v4
-        with:
-          name: mcserver-image-tar
-          path: ./mcserver.tar
+      - name: 上传FileCodeBox
+        id: upload_fcb
+        run: |
+          RESP=$(curl -s -X POST "$https://box.iffol.com/share/file/" \
+            -F "file=@./mcserver.tar" \
+            -F "expire_style=count" \
+            -F "expire_value=20")
+          echo "$RESP"
+          CODE=$(echo "$RESP" | jq -r '.detail.code')
+          echo "提取码=$CODE"
