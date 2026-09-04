@@ -3,8 +3,6 @@ LABEL author="神人"
 LABEL email="zxcvbnm1916716@qq.com"
 # 复制全部项目文件到容器 /mc
 COPY . /mc
-# 设置上海时区
-RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && echo 'Asia/Shanghai' >/etc/timezone
 # 工作目录
 WORKDIR /mc
 # 清理无用文件，减小镜像
