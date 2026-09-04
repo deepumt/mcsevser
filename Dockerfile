@@ -5,8 +5,6 @@ LABEL email="zxcvbnm1916716@qq.com"
 COPY . /mc
 # 工作目录
 WORKDIR /mc
-# 清理无用文件，减小镜像
-RUN rm -rf backups .SystemConfig Dockerfile
 # 给启动脚本执行权限
 RUN chmod +x mc.sh
 # 开放端口：Java版、Geyser基岩UDP、MCSSH控制台
