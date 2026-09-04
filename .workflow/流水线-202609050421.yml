@@ -7,7 +7,7 @@ stages:
     strategy: naturally
     trigger: auto
     steps:
-      - step: image-build-pluse@buildkitd
+      - step: image-build-plus@buildkitd
         name: build_mc_tar
         displayName: 构建镜像输出tar制品
         resource:
