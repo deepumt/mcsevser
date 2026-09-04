@@ -1,0 +1,28 @@
+version: "1.0"
+name: 流水线-202609050421
+displayName: 流水线-202609050421
+stages:
+  - name: 未命名
+    displayName: 未命名
+    strategy: naturally
+    trigger: auto
+    steps:
+      - step: custom-build
+        name: build_mc_tar
+        displayName: 构建镜像输出tar制品
+        resource:
+          cpu: "8"
+          memory: "16"
+        script: |
+          buildctl build \
+            --frontend dockerfile.v0 \
+            --opt platform=linux/amd64 \
+            --local dockerfile=. \
+            --local context=. \
+            --output type=docker,name=mcserver:${GITEE_PIPELINE_BUILD_NUMBER},dest=./mcserver.tar
+        artifacts:
+          - name: mcserver.tar
+            path: ./mcserver.tar
+    triggers:
+      trigger: auto
+notify: []
